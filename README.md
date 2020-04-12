@@ -1,11 +1,11 @@
-#rapid-deploy-cli
+# rapid-deploy-cli
 CLI Tool developed using Picocli and Java to help deploy applications on Rapid Deploy (https://github.com/SaiUpadhyayula/rapid-deploy).
 
-##Available commands
+## Available commands
 - rd create-app <app-name> (Create an Application in Rapid Deploy)
 - rd apps (List all applications inside Rapid Deploy)
 
-##TODO
+## TODO
 - Implement following commands:
     - rd login -u <username> -p <password>
     - rd start-app <app-name>
