@@ -12,11 +12,12 @@ import picocli.CommandLine.Parameters;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 
+import static okhttp3.MediaType.get;
+
 @Command(name = "create-app")
 public class CreateAppCommand implements Callable<Integer> {
 
-    public static final MediaType JSON
-            = MediaType.get("application/json; charset=utf-8");
+    public static final MediaType JSON = get("application/json; charset=utf-8");
 
     @Parameters(index = "0")
     private String appName;
@@ -32,7 +33,7 @@ public class CreateAppCommand implements Callable<Integer> {
         RequestBody body = RequestBody.create(json, JSON);
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url("http://localhost:8080/api/application")
+                .url("http://localhost:9000/api/application")
                 .post(body)
                 .build();
         try (Response response = client.newCall(request).execute()) {
